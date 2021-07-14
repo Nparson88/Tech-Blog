@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
           attributes: 'username'
         },
       ]
-    }).then(dbPostData => res.json(dbPostData))
+    }).then(dbPostData => res.json(dbPostData.reverse()))
       .catch(err => {
         res.status(500).json(err);
       });
