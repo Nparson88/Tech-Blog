@@ -57,7 +57,7 @@ router.get('/post/:id', (req, res) => {
             return;
         }
         const post = dbPostData.get({ plain: true });
-        res.render('single-post', { post, loggedIn: req.session.loggedIn });
+        res.render('singlePost', { post, loggedIn: req.session.loggedIn });
     }).catch(err => {
         res.status(500).json(err);
     });
@@ -86,7 +86,7 @@ router.get('/posts-comments', (req, res) => {
             return;
         }
         const post = dbPostData.get({ plain: true });
-        res.render('posts-comments', { post, loggedIn: req.session.loggedIn });
+        res.render('postInfo', { post, loggedIn: req.session.loggedIn });
     }).catch(err => {
         res.status(500).json(err);
     });
