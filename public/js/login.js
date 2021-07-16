@@ -23,4 +23,4 @@ async function loginFormHandler(event) {
   }
   
 
-document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
+$('#login-form').on('submit', loginFormHandler);
