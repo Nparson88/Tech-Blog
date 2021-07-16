@@ -39,12 +39,12 @@ router.get('/post/:id', (req, res) => {
             attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
             include: {
                 model: User,
-                attributes: 'username'
+                attributes: ['username']
             }
         },
         {
             model: User,
-            attributes: 'username'
+            attributes: ['username']
         }]
     }).then(dbPostData => {
         if (!dbPostData) {
@@ -68,12 +68,12 @@ router.get('/posts-comments', (req, res) => {
             attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
             include: {
                 model: User,
-                attributes: 'username'
+                attributes: ['username']
             }
         },
         {
             model: User,
-            attributes: 'username'
+            attributes: ['username']
         }]
     }).then(dbPostData => {
         if (!dbPostData) {

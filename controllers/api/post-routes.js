@@ -5,24 +5,25 @@ const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     Post.findAll({
-        attributes: ['id','title','post_content'],
+        attributes: ['id','title','post_content','createdAt'],
       order: [[, 'DESC']],
       include: [
         {
           model: Comment,
-          attributes: ['id', 'comment_text', 'post_id', 'user_id', ],
+          attributes: ['id', 'comment_text', 'post_id', 'user_id','createdAt' ],
           include: {
             model: User,
-            attributes: 'username' 
+            attributes: ['username'] 
           }
         },
         {
           model: User,
-          attributes: 'username'
+          attributes: ['username']
         },
       ]
     }).then(dbPostData => res.json(dbPostData.reverse()))
       .catch(err => {
+       console.log(err)
         res.status(500).json(err);
       });
   });
@@ -31,18 +32,18 @@ router.get('/', (req, res) => {
       where: {
         id: req.params.id
       },
-      attributes: ['id','title',,'post_content'],
+      attributes: ['id','title',,'post_content','createdAt'],
       include: [
         {
           model: User,
-          attributes: 'username'
+          attributes: ['username']
         },
         {
           model: Comment,
-          attributes: ['id', 'comment_text', 'post_id', 'user_id', ],
+          attributes: ['id', 'comment_text', 'post_id', 'user_id','createdAt' ],
           include: {
             model: User,
-            attributes: 'username'
+            attributes: ['username']
           }
         }]
     }).then(dbPostData => {
