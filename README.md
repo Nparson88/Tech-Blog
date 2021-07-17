@@ -23,7 +23,7 @@ Nich Parson
 none
 ## Questions: 
 Contact me by the following for any questions:
-* Github:(https://github.com/https://github.com/Nparson88)
+* Github:(https://github.com/Nparson88)
 * Email: nparson88@gmail.com 
 ## Screenshots
 * ![screenshot](tech1.png)
