@@ -4,6 +4,7 @@
     "description": "Tech-Blog",
     "main": "server.js",
     "scripts": {
+        "heroku-postbuild": "npm run seed",
         "test": "jest",
         "start": "node server.js",
         "watch": "nodemon server.js",
